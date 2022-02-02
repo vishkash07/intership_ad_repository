@@ -39,11 +39,13 @@
 	INSERT INTO BRANCH VALUES 	(104,'CHICAGO','CHICAGO');
 	INSERT INTO BRANCH VALUES 	(105,'Kingston','NEW YORK');
 	INSERT INTO BRANCH VALUES 	(106,'Kingston','NEW YORK');
+    
 -- ################################################################
 	INSERT INTO DEPT VALUES	(10,'ACCOUNTING',101);
 	INSERT INTO DEPT VALUES (20,'RESEARCH',103);
 	INSERT INTO DEPT VALUES	(30,'SALES',105);
 	INSERT INTO DEPT VALUES	(40,'OPERATIONS',106);
+    
 -- ################################################################
 INSERT INTO EMP VALUES(7369,'SMITH','CLERK',7902,to_date('17-12-1980','dd-mm-yyyy'),800,NULL,20,102);
 INSERT INTO EMP VALUES(7499,'ALLEN','SALESMAN',7698,to_date('20-2-1981','dd-mm-yyyy'),1600,300,30,102);
@@ -104,7 +106,7 @@ ORDER BY
     
 -- ################################################################
 -- 11.3 Sort the all employees details as per department by emp no
--- ################################################################
+-- ###############################################################
 SELECT 
     deptno,empno,ename,job,mgr,hiredate,sal,comm,branchno
 FROM

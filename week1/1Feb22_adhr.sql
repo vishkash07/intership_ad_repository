@@ -1,3 +1,10 @@
+-- ################################################################
+-- 12. WHERE CLAUSE
+-- Where caluse with in,not in, is null, is not null, between, not between
+-- Where caluse with Comparison Operator (<,>,<=,>=,=,<>,!=)
+-- Where caluse with Logical Operator (AND,OR,NOT)
+-- ################################################################
+-- ################################################################
 --## 12.1 displaying records of all emp in deptno 10 ##   
 
 SELECT
@@ -10,7 +17,7 @@ ORDER BY
     deptno;
 
 
---## 12.2 displaying ename, employee no, deptno = 10 in deptno 10 ##   
+--## 12.2 displaying ename, employee no, deptno in deptno 10 ##   
 
 SELECT
     empno, ename, deptno
@@ -21,7 +28,7 @@ WHERE
 ORDER BY
     deptno;
 
---## 12.3 displaying records of all emp in deptno 10 and 20  ##   
+--## 12.3 displaying records of all emp in deptno 10 or 20  ##   
 
 SELECT
     empno, ename, job, mgr, hiredate, sal, comm, deptno, branchno
@@ -32,7 +39,7 @@ WHERE
 ORDER BY
     deptno;
 
---## 12.4 displaying records of all emp in deptno 10 and 20 using "IN"  ##   
+--## 12.4 displaying records of all emp in deptno 10 or 20 using "IN"  ##   
 
 SELECT
     empno, ename, job, mgr, hiredate, sal, comm, deptno, branchno
@@ -98,7 +105,7 @@ WHERE
 ORDER BY
     deptno;
     
---## 12.8 displaying records of  emp not working in any  deptno in this we cant use "NOT IN(10,20,30) Cause this wont check null values ##   
+--## 12.10 Display employee no,name,comm working department no 30 and earning some commission ##   
 
 SELECT
     empno, ename, comm, deptno
@@ -109,7 +116,7 @@ WHERE
 ORDER BY
     deptno;
     
---## 12.8 Display all employees not earning any commission##   
+--## 12.11 Display all employees not earning any commission##   
 
 SELECT
     empno,ename,comm,deptno
@@ -120,7 +127,7 @@ WHERE
 ORDER BY 
     comm;
 
---## 12.8 displaying records of  emp earning range salary  ##   
+--## 12.12 displaying records of  emp earning salary in range (x,y) including  boundary  ##   
 
 SELECT
     empno,ename,comm,deptno,sal
@@ -131,7 +138,7 @@ WHERE
 ORDER BY 
     sal;
 
---## 12.8 displaying records of  emp earning range salary using BETWEEN ##   
+--## 12.13 displaying records of  emp earning range salary using BETWEEN ##   
 
 SELECT
     empno,ename,comm,deptno,sal
@@ -142,7 +149,7 @@ WHERE
 ORDER BY 
     sal;
     
---## 12.8 displaying records of  emp earning range salary but not including endpoints  ##   
+--## 12.14 displaying records of  emp earning range salary but not including endpoints  ##   
 
 SELECT
     empno,ename,comm,deptno,sal
@@ -153,7 +160,7 @@ WHERE
 ORDER BY 
     sal;
     
---## 12.8 displaying records of  emp  not earning range salary  ##   
+--## 12.15 displaying records of  emp  not earning range salary  ##   
 
 SELECT
     empno,ename,comm,deptno,sal
@@ -164,7 +171,7 @@ WHERE
 ORDER BY 
     sal;
     
---## 12.8 displaying records of  emp  not earning range salary using comparison operators ##   
+--## 12.16 displaying records of  emp  not earning range salary using comparison operators ##   
 
 SELECT
     empno,ename,comm,deptno,sal
@@ -175,7 +182,7 @@ WHERE
 ORDER BY 
     sal;
     
- --## 12.8 displaying records of  emp  earnig 5000 ##   
+ --## 12.17 displaying records of  emp  earnig 5000 ##   
 
 SELECT
     empno,ename,comm,deptno,sal
@@ -186,7 +193,7 @@ WHERE
 ORDER BY 
     sal;  
     
---## 12.8 displaying records of  emp  not earning 5000 ##   
+--## 12.18 displaying records of  emp  not earning 5000 ##   
 
 SELECT
     empno,ename,comm,deptno,sal
@@ -196,6 +203,7 @@ WHERE
     sal!=5000
 ORDER BY 
     sal;
+    
 --## 12.8 displaying records of  emp  not earning 5000 with <> ## 
 SELECT
     empno,ename,comm,deptno,sal
@@ -237,7 +245,7 @@ FROM
 WHERE 
     ename LIKE 'S%' 
 
--- 13.2 Display details of emp whoes name does not stars with s
+-- 13.3 Display details of emp whoes name does not stars with s
 
 SELECT
     empno,ename
@@ -246,7 +254,7 @@ FROM
 WHERE 
     ename NOT LIKE 'S%'
     
--- 13.2 Display details of emp whoes name  ends with s
+-- 13.4 Display details of emp whoes name  ends with s
 
 SELECT
     empno,ename
@@ -255,17 +263,9 @@ FROM
 WHERE 
     ename LIKE '%S'
     
--- 13.3 Display details of emp whoes name  ends with s
-
-SELECT
-    empno,ename
-FROM
-    emp
-WHERE 
-    ename LIKE '%S'
 
 -- ################################################################
--- 13.4 Display all details of EMPLOYEE who's name contains LL
+-- 13.5 Display all details of EMPLOYEE who's name contains LL
 -- ################################################################
 SELECT
     empno,ename
@@ -376,9 +376,7 @@ GROUP BY
 ORDER BY 
     count(empno);
     
-    -- ################################################################
--- 15.2 Display department wise max,min,avg salary
--- ################################################################
+
 -- ################################################################
 -- 15.2 Display department wise max,min,avg salary
 -- ################################################################
@@ -400,7 +398,7 @@ GROUP BY
 ORDER BY
     deptno;
 
-    -- ################################################################
+-- ################################################################
 -- 15.3 Display department wise max,min,avg salary where avg(sal)<2500
 -- ################################################################
 SELECT 
@@ -451,19 +449,19 @@ ORDER BY
     comm;
     
 -- ################################################################
--- 18. SUB QUERY
+-- 17. SUB QUERY
 -- ################################################################
 -- ################################################################
--- 18. display the employees details such as empno,ename and sal, who are earning more than avg salary
+-- 17. display the employees details such as empno,ename and sal, who are earning more than avg salary
 -- ################################################################
 -- ################################################################
--- 18. SUB QUERY
+-- 17. SUB QUERY
 -- Query within query
 -- Inner Query
 -- outer Query depends on result of INNER query
 -- ################################################################
 -- ################################################################
--- 18. display the employees details such as empno,ename and sal, who are earning more than avg salary
+-- 17.1 display the employees details such as empno,ename and sal, who are earning more than avg salary
 -- ################################################################
 -- 1. display empno,ename,sal
 SELECT 
@@ -491,7 +489,7 @@ WHERE
     );
 
 -- ################################################################
--- 18.2. Display empno,ename,deptno for all employees working in 'ACCOUNTING'
+-- 17.2. Display empno,ename,deptno for all employees working in 'ACCOUNTING'
 -- ################################################################
 -- 1.
     SELECT 
@@ -522,7 +520,7 @@ WHERE
         );
 
 -- ################################################################
--- 18.3. Display empno,ename,deptno for all employees from department having employee earning salary > avg(salary)
+-- 17.3. Display empno,ename,deptno for all employees from department having employee earning salary > avg(salary)
 -- ################################################################
 -- 1. department having employee earning max salary
     SELECT 
@@ -549,47 +547,18 @@ SELECT
     WHERE
     deptno IN (SELECT       deptno     FROM         emp
             WHERE         sal>(SELECT avg(sal) FROM emp))
+    AND
+        sal>(SELECT avg(sal) FROM emp)
     ORDER BY
     deptno;
      
+
 -- ################################################################
--- 18.3. Display empno,ename,deptno for all employees from department having employee earning salary > avg(salary)
--- ################################################################
--- 1. department having employee earning max salary
-    SELECT 
-        deptno
-    FROM 
-        emp
-    WHERE
-        sal>(SELECT avg(sal) FROM emp)
-    ORDER BY
-    deptno;
-        
-    
--- 2. Display empno,ename,deptno for all employees
-    SELECT 
-        empno,ename,deptno
-    FROM
-        emp;
-    
--- 3. Final
-SELECT 
-        empno,ename,deptno
-    FROM
-        emp
-    WHERE
-    deptno IN (SELECT       deptno     FROM         emp
-            WHERE         sal>(SELECT avg(sal) FROM emp))
-    and
-    sal>(SELECT avg(sal) FROM emp)
-    ORDER BY
-    deptno;
--- ################################################################
--- 18.4. Display empno,ename,deptno for employee earning greater than any from employees of dept 30
--- ################################################################
+-- 17.4. Display empno,ename,deptno for employee earning greater than any from employees of dept 30
+-- ###############################################################
 
 
-
+--ANY
 SELECT 
         empno,ename,deptno,sal
 FROM
@@ -600,11 +569,12 @@ WHERE
         deptno!=30 
 order by sal;
 
-
+--All
+SELECT sal FROM emp WHERE deptno=30
 SELECT 
         empno,ename,deptno,sal
 FROM
         emp
 WHERE
         sal > All(SELECT sal FROM emp WHERE deptno=30)
-            
+order by sal;            
