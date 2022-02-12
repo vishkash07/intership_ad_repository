@@ -1,0 +1,3 @@
+--oracle sysnonyms
+--create aliases for schema objects
+--
